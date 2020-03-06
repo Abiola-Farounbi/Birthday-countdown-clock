@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<link href="countdown.css" type="text/css" rel="stylesheet"/>
+<title >Countdown Clock </title>
+</head>
+<body>
+      
+<section id="wrapper">
+        <div id ="text"> 
+                <h1> Coded_Fae's Birthday Countdown Clock   </h1>
+                <br>
+                <p><i> Countdown to 22nd of March</i></p>
+            </div>
+    <div id="clock"> </div>
+ 
+   </section>
+<script >
+    function showTime(){
+    var time=new Date();
+    var eventDate=new Date(2020, 02, 22);
+    var currentTime=time.getTime();
+    var eventTime=eventDate.getTime();
+    var realTime=eventTime - currentTime;
+
+    var s=Math.floor(realTime /1000);
+    var m=Math.floor(s /60);
+    var h=Math.floor(m /60);
+    var d=Math.floor(h /24);
+
+    h%=24;
+    m%=60;
+    s%=60;
+
+    
+    h=(h<10) ? '0'+h :h;
+    m=(m<10) ? '0'+m :m;
+    s=(s<10) ? '0'+s :s;
+
+    var display=d +" days " +h+" hrs "+m+ " min "+s +" secs";
+    document.getElementById("clock").innerText=display;
+    document.getElementById("clock").textContent=display;
+
+    setTimeout(showTime,1000);
+}
+showTime();
+</script>
+</body>
+</html>

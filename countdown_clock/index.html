@@ -15,8 +15,9 @@
     <div id="clock"> </div>
  
    </section>
-<script >
-    function showTime(){
+
+   <script >
+    var x= function showTime(){
     var time=new Date();
     var eventDate=new Date(2020, 02, 22);
     var currentTime=time.getTime();
@@ -41,8 +42,14 @@
     document.getElementById("clock").innerText=display;
     document.getElementById("clock").textContent=display;
 
-    setTimeout(showTime,1000);
+   
+    if (realTime<0){
+        clearInterval(x);
+        document.getElementById("clock").innerHTML="EXPIRED"
+
+    }
 }
+setTimeout(x,1000);
 showTime();
 </script>
 </body>
